@@ -1,0 +1,27 @@
+.done{
+    text-decoration: line-through;
+    color: #bdbdbd;
+}
+.todo-item{
+    padding: 16px 5px;
+    border-bottom: 1px dashed #bbb;
+    display: flex
+}
+.todo-item:hover{
+    background: #eee
+}
+.item-name{
+    flex-basis: 0;
+    flex-grow: 9
+}
+.item-delete{
+    flex-basis: 0;
+    flex-grow: 1;
+    text-align: right;
+    color: #03a9f4;
+    font-weight: bold;
+    cursor: pointer
+}
+.item-name{
+    cursor: context-menu
+}
