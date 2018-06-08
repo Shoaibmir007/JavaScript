@@ -7,7 +7,7 @@ export default class AddItem extends React.Component {
         return (
             <form id="add-todo" onSubmit={this.handleSubmit.bind(this)}>
                 <input type="text" placeholder="What needs to be done?" ref="newItem" />
-                <input type="submit" value="click me" />
+                <input type="submit" value="add" />
             </form>
         );
     }

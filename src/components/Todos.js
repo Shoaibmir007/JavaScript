@@ -6,7 +6,7 @@ import '../css/Todos.css'
 //Create Component
 export default class Todos extends React.Component {
 	constructor(props) {
-		super(props);
+		super(props)
 		this.state = {
 			todos: ['wash up', 'eat some food', 'take a nap'],
 		}
@@ -15,7 +15,7 @@ export default class Todos extends React.Component {
 		var todos = this.state.todos;
 		todos = todos.map( (item, index) => {
 			return(
-				<TodoItem item={item} key={index} onDelete={this.onDelete.bind(this)} />
+				<TodoItem item={item} key={index} index={index} onDelete={this.onDelete.bind(this)} />
 			);
 		});
 		return (
@@ -30,15 +30,14 @@ export default class Todos extends React.Component {
 		);
 	}
 	// Custom functions
-	onDelete(item) {
-		var updatedTodos = this.state.todos.filter( (val, index) => {
-			return item !== val;
-		});
+	onDelete(index) {
+		let updatedTodos = this.state.todos;
+		updatedTodos.splice(index, 1);
 		this.setState({ todos: updatedTodos });
 	}
 	onAdd(item) {
-		var updatedTodos = this.state.todos;
-		updatedTodos.push(item);
-		this.setState({ todos: updatedTodos });
+		let newTodos = this.state.todos;
+		newTodos.push(item);
+		this.setState({ todos: newTodos });
 	}
 }

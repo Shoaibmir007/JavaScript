@@ -15,9 +15,13 @@ export default class TodoItem extends React.Component {
 	}
 	// Custom functions
 	handleDelete() {
-		this.props.onDelete(this.props.item)
+		this.props.onDelete(this.props.index)
 	}
 	handleItem(e) {
 		e.target.className += " done";
+	}
+	
+	checkIndex() {
+		console.log(this.props.index)
 	}
 }
